@@ -1,5 +1,12 @@
 image:
   file: .gitpod.Dockerfile
+tasks:
+  - name: Strapi
+    init: >
+      cd /workspace/strapi-project/api &&
+      yarn install &&
+      gp sync-done strapi
+    command: yarn develop
 ports:
   - port: 1337
     onOpen: open-browser
